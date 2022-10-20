@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Button from './ui/button/button'
-import Input from './ui/input/Input'
 
 const Users = (data) => {
     // Hooks
@@ -22,13 +21,13 @@ const Users = (data) => {
     return (
         <tr className='Table__body' key={data.user.id}>
             <td className='user__select'><input type="checkbox" id="select__user" name="select__user"/></td>
-            <td className='user__name'><textarea type="text" value ={values.name}disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, name: e.target.value})}/></td> 
-            <td className='user__iin'><textarea type="text" value={values.iin} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, iin: e.target.value})}/></td>
-            <td className='user__payment'><textarea type="text" value={values.payment} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, payment: e.target.value})}/> </td>
-            <td className='user__iban'><textarea type="text" value={values.iban} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, iban: e.target.value})}/> </td>
-            <td className='user__tel'><textarea type="text" value={values.tel} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, tel: e.target.value})}/> </td>
+            <td className='user__name'><textarea placeholder="Имя" type="text" value ={values.name}disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, name: e.target.value})}/></td> 
+            <td className='user__iin'><textarea placeholder="Иин" type="text" value={values.iin} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, iin: e.target.value})}/></td>
+            <td className='user__payment'><textarea placeholder="Зарплата" type="text" value={values.payment} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, payment: e.target.value})}/> </td>
+            <td className='user__iban'><textarea placeholder="IBAN" type="text" value={values.iban} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, iban: e.target.value})}/> </td>
+            <td className='user__tel'><textarea placeholder="Телефон" type="text" value={values.tel} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, tel: e.target.value})}/> </td>
             <td className='user__invite'><Button>Отправить СМС</Button></td>
-            <td className='user__status'><textarea type="text" value={values.status} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, status: e.target.value})}/> </td>
+            <td className='user__status'><textarea placeholder="Статус" type="text" value={values.status} disabled={disable ? 'disabled' : ''} onChange={e => setValues({...data.users, status: e.target.value})}/> </td>
             <td className='user__btns'>
                 {disable ? <Button className='edit__btn' onClick={()=>setDisable(false)}>/\</Button> : <Button className='edit__btn' onClick={saveData}>Ok</Button>} 
                 <Button className='del__btn' onClick={delUser}>X</Button>
